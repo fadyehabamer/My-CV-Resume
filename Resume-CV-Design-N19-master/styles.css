@@ -26,16 +26,30 @@ body {
   font-size: 16px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .resume {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: auto;
   display: flex;
   margin: 50px auto;
 }
 
 .resume .resume_left {
+  flex: 0 0 280px;
   width: 280px;
-  background: #0bb5f4;
+  background: #066b90;
 }
 
 .resume .resume_left .resume_profile {
@@ -89,7 +103,7 @@ body {
   width: 35px;
   height: 35px;
   background: #fff;
-  color: #0bb5f4;
+  color: #066b90;
   border-radius: 50%;
   margin-right: 15px;
   font-size: 16px;
@@ -124,7 +138,7 @@ body {
   width: 60%;
   margin: 0 5px;
   height: 5px;
-  background: #009fd9;
+  background: #005a7a;
   position: relative;
 }
 
@@ -146,13 +160,14 @@ body {
 }
 
 .resume .resume_right {
-  width: 520px;
+  flex: 1 1 520px;
+  min-width: 0;
   background: #fff;
   padding: 25px;
 }
 
 .resume .resume_right .bold {
-  color: #0bb5f4;
+  color: #066b90;
 }
 
 .resume .resume_right .resume_work ul,
@@ -188,7 +203,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  border: 2px solid #0bb5f4;
+  border: 2px solid #066b90;
 }
 
 .resume .resume_right .resume_work ul li:after,
@@ -196,10 +211,10 @@ body {
   content: "";
   position: absolute;
   top: 14px;
+  bottom: -5px;
   left: -21px;
   width: 2px;
-  height: 115px;
-  background: #0bb5f4;
+  background: #066b90;
 }
 
 .resume .resume_right .resume_hobby ul {
@@ -210,10 +225,10 @@ body {
 .resume .resume_right .resume_hobby ul li {
   width: 80px;
   height: 80px;
-  border: 2px solid #0bb5f4;
+  border: 2px solid #066b90;
   border-radius: 50%;
   position: relative;
-  color: #0bb5f4;
+  color: #066b90;
 }
 
 .resume .resume_right .resume_hobby ul li i {
@@ -227,9 +242,42 @@ body {
   right: -52px;
   width: 50px;
   height: 2px;
-  background: #0bb5f4;
+  background: #066b90;
 }
 
 .resume .resume_right .resume_hobby ul li:last-child:before {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .resume .resume_right .resume_hobby ul li:before {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .resume {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .resume .resume_left,
+  .resume .resume_right {
+    flex: none;
+    width: 100%;
+  }
+
+  .resume .resume_left .resume_profile {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .resume .resume_right .resume_hobby ul li {
+    width: 60px;
+    height: 60px;
+  }
+
+  .resume .resume_right .resume_hobby ul li i {
+    font-size: 24px;
+  }
 }
