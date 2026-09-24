@@ -27,13 +27,15 @@ body {
 }
 
 .resume {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
   height: auto;
   display: flex;
   margin: 50px auto;
 }
 
 .resume .resume_left {
+  flex: 0 0 280px;
   width: 280px;
   background: #066b90;
 }
@@ -146,7 +148,8 @@ body {
 }
 
 .resume .resume_right {
-  width: 520px;
+  flex: 1 1 520px;
+  min-width: 0;
   background: #fff;
   padding: 25px;
 }
@@ -196,9 +199,9 @@ body {
   content: "";
   position: absolute;
   top: 14px;
+  bottom: -5px;
   left: -21px;
   width: 2px;
-  height: 115px;
   background: #066b90;
 }
 
@@ -232,4 +235,37 @@ body {
 
 .resume .resume_right .resume_hobby ul li:last-child:before {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .resume .resume_right .resume_hobby ul li:before {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .resume {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .resume .resume_left,
+  .resume .resume_right {
+    flex: none;
+    width: 100%;
+  }
+
+  .resume .resume_left .resume_profile {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .resume .resume_right .resume_hobby ul li {
+    width: 60px;
+    height: 60px;
+  }
+
+  .resume .resume_right .resume_hobby ul li i {
+    font-size: 24px;
+  }
 }
