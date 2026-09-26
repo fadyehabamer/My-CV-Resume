@@ -13,6 +13,8 @@ Resume-CV-Design-N19-master/
 
 ## Viewing it
 
+**Live:** https://fadyehabamer.github.io/My-CV-Resume/ (GitHub Pages from `main`; the root `index.html` redirects to `Resume-CV-Design-N19-master/`).
+
 No build step or dependencies are needed. Open `Resume-CV-Design-N19-master/index.html` in a browser, or serve the folder locally:
 
 ```bash
